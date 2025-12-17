@@ -50,7 +50,7 @@ def load_checkpoint_model(device_name):
                 buffer.write(f.read())
         buffer.seek(0) # Reset to start of buffer
         return torch.load(buffer, map_location=map_location, weights_only=False)
-    state_dict = load_chunked("blobs/my_model_weights.pt", map_location="cuda:0")
+    state_dict = load_chunked("blobs/my_model_weights.pt", map_location="cpu")
 
     # load & check for a compiled state
     # remove the prefix if it was saved compiled
