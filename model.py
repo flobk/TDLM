@@ -10,10 +10,10 @@ from transformer_impl import precompute_freqs_cis
 Reimplementation of the MD4 discrete diffusion model. 
 Refernce (original code is in JAX): https://github.com/google-deepmind/md4/blob/main/md4/models/diffusion/md4.py
 
-Some features the reimplemenation is lacking:
-- Only cosine schedule here
-- Only ancestral sampling here
-- Only continuous time sampling here
+The reimplemenation is limited to only use:
+- cosine schedule as the alpha schedule
+- ancestral sampling
+- continuous time sampling
 """
 
 class TimestepEmbedder(nn.Module):
